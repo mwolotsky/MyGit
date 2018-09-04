@@ -1,0 +1,15 @@
+[Unit]
+Description=Git Init Daemon
+After=network.target
+[Service]
+User=git-admin
+Type=simple
+TimeoutSec=0
+ExecStart=/home/git-admin/git-controller/notify.sh
+Restart=always
+RestartSec=10s
+StandardOutput=null
+StandardError=/home/git-admin/logs
+[Install]
+WantedBy=multi-user.target
+
